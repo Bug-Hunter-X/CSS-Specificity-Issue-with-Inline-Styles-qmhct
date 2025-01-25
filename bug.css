@@ -1,0 +1,27 @@
+The following CSS code snippet demonstrates an uncommon bug related to the specificity of CSS selectors:
+
+```css
+.container {
+  width: 200px;
+  height: 200px;
+  background-color: lightblue;
+}
+
+.container p {
+  font-size: 16px;
+}
+
+.container p.special {
+  font-size: 24px; /*This will not override the inline style */
+}
+
+p.special {
+  font-size: 18px; /* This will be overridden by the inline style */
+}
+
+#special-paragraph {
+  font-size: 24px;/* This will override inline style */
+}
+```
+
+The `p.special` selector has a higher specificity than `.container p`, but in certain scenarios, it might not override the style set in `.container p` if an inline style is applied on the `p.special` element. This often happens when dealing with dynamic styles applied through JavaScript.
