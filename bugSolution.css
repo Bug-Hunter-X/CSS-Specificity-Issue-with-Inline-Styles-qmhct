@@ -1,0 +1,23 @@
+The solution involves either removing the inline style or using an ID selector which has higher specificity than any class selector. Here's the corrected CSS:
+
+```css
+.container {
+  width: 200px;
+  height: 200px;
+  background-color: lightblue;
+}
+
+.container p {
+  font-size: 16px;
+}
+
+.container p.special {
+  font-size: 24px;
+}
+
+#special-paragraph {
+  font-size: 24px;
+}
+```
+
+By removing the inline style or using `id` selectors, we ensure that the CSS rules are applied according to their intended specificity.
